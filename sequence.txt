@@ -4,9 +4,7 @@
 
 3) Truth table:
 
-000 -> B0B1B2 (opposite order of how Prof. Matni did during lecture - B2 is rightmost bit)
-
- B0 | B1 | B2 | I | B0* | B1* | B2* | U
+ B2 | B1 | B0 | I | B2* | B1* | B0* | U
 ----------------------------------------
  0  | 0  | 0  | 0 |  0  |  0  |  1  | 0 
 ----------------------------------------
@@ -31,8 +29,8 @@
 4) K-Map for U
 
 Output: U
-Across: B0.B1
-Down: B2.I
+Across: B2.B1
+Down: B0.I
 
     | 00 | 01 | 11 | 10
 ------------------------
@@ -46,13 +44,13 @@ Down: B2.I
 
 Optimized sum of products:
 
-U = B0
+U = B2
 
-5) K-Map for B2*
+5) K-Map for B0*
 
-Output: B2*
-Across: B0.B1
-Down: B2.I
+Output: B0*
+Across: B2.B1
+Down: B0.I
 
     | 00 | 01 | 11 | 10
 ------------------------
@@ -66,17 +64,17 @@ Down: B2.I
 
 Optimized sum of products:
 
-B2* = !B2!I + B1!B2
+B0* = !B0!I + B1!B0
 
 6) Circuit drawing is in sequence2.jpg
 
-B0* = !B0B1B2!I
+B2* = !B0B1B2!I
 
 K-Map for B1*
 
 Output: B1*
-Across: B0.B1
-Down: B2.I
+Across: B2.B1
+Down: B0.I
 
     | 00 | 01 | 11 | 10
 ------------------------
@@ -90,4 +88,4 @@ Down: B2.I
 
 Optimized sum of products:
 
-B1* = B0I + !B0!B1B2 + B1!B2I
+B1* = B0I + !B2!B1B2 + B1!B2I
